@@ -43,7 +43,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\Build.ps1
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\Install.ps1 -DisableScreenXpert
 ```
 
-The execution-policy override affects only these PowerShell processes. Scripts do not download or execute third-party code. Review them before running.
+The execution-policy override affects only these PowerShell processes. The build and install scripts do not download third-party code; the optional ScreenXpert restore script uses Microsoft Store. Review them before running.
 
 `-DisableScreenXpert` saves its two services' existing startup states, disables/stops them and closes known ScreenXpert processes. It **does not uninstall the app or remove drivers**. Settings are saved under `%ProgramData%\DuoMinimal\screenxpert-services.xml`; later runs preserve the first backup. If ScreenXpert is already disabled/removed, the flag is optional.
 
